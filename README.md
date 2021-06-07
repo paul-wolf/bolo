@@ -59,3 +59,7 @@ curl --request POST \
 }'
 ```
 
+Doc for fastapi-users:
+
+https://frankie567.github.io/fastapi-users/configuration/databases/sqlalchemy/
+

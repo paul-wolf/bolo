@@ -1,3 +1,5 @@
+from typing import List
+
 import databases
 import sqlalchemy
 from fastapi import Request
@@ -5,6 +7,17 @@ from fastapi_users import FastAPIUsers, models
 from fastapi_users.authentication import JWTAuthentication
 from fastapi_users.db import SQLAlchemyBaseUserTable, SQLAlchemyUserDatabase
 from sqlalchemy.ext.declarative import DeclarativeMeta, declarative_base
+from sqlalchemy import (
+    Table,
+    MetaData,
+    Column,
+    Integer,
+    String,
+    Date,
+    ForeignKey,
+    event,
+)
+from pydantic import BaseModel
 
 from bolo.config import Config
 
@@ -16,6 +29,10 @@ SECRET = config.get("SECRET")
 
 class User(models.BaseUser):
     pass
+
+
+class UserList(BaseModel):
+    __root__: List[User]
 
 
 class UserCreate(models.BaseUserCreate):
@@ -37,6 +54,7 @@ Base: DeclarativeMeta = declarative_base()
 class UserTable(Base, SQLAlchemyBaseUserTable):
     # crikey, by default they try to use "user" as table name; but that's a reserved word in pg
     __tablename__ = "auth_user"
+    comment = Column(String(length=320), unique=True, index=True, nullable=False)
 
 
 # engine = sqlalchemy.create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
