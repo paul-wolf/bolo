@@ -1,0 +1,13 @@
+sqlalchemy
+psycopg2
+fastapi[all]
+databases[postgresql]
+ipython
+environs
+alembic
+jinja2
+aiofiles
+pandas
+typer
+black
+flake8

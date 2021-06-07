@@ -1,0 +1,13 @@
+session_name: '0'
+windows:
+- focus: 'true'
+  layout: 9b02,478x118,0,0{119x118,0,0,0,119x118,120,0,2,119x118,240,0,1,118x118,360,0,3}
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: Python
+  - zsh
+  - zsh
+  - zsh
+  start_directory: /Users/paul
+  window_name: zsh

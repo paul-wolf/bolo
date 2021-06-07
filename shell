@@ -1,0 +1,1 @@
+ipython --config=ipython_config.py  -i ipython_init.py
