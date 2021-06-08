@@ -1,8 +1,12 @@
 # bolo
 
+The project is called "bolo". No reason; it's just short and easy to type.
+
 This will create a project that have user authentication using FastAPI-users.
 
-The project is called "bolo". No reason; it's just short and easy to type.
+This is restricted to SQLAlchemy 1.3 because it users fastapi-users for user
+management and authentication. This package relies on the `database` package
+which is incapatible with SA 1.4. 
 
 Clone the repo:
 
@@ -63,3 +67,12 @@ Doc for fastapi-users:
 
 https://frankie567.github.io/fastapi-users/configuration/databases/sqlalchemy/
 
+
+
+Features
+
+* Demonstrate fastapi-users
+
+* get user list
+
+* 
